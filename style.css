@@ -1,0 +1,375 @@
+/* Add Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Basic reset for margin and padding */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', Arial, sans-serif; /* Professional, modern font */
+  background: #e3f2fd; /* Light blue background for travel theme */
+}
+
+/* Header styles */
+header {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding: 32px 16px 24px 16px; /* More space for a clean look */
+  background-color: #1565c0; /* Professional deep blue for travel theme */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow for clean look */
+  border-radius: 0 0 16px 16px; /* Rounded bottom corners */
+}
+
+/* Logo styles */
+.logo {
+  font-size: 2em; /* Larger logo */
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 12px; /* Space below logo */
+  font-family: 'Montserrat', Arial, sans-serif; /* Match body font */
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Horizontal menu */
+  gap: 32px; /* More space between links */
+}
+
+nav li {
+  margin: 0; /* Remove left margin, use gap instead */
+}
+
+nav a {
+  text-decoration: none; /* Removes underline */
+  color: #e3f2fd; /* Light blue for links */
+  font-size: 1.1em;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+nav a:hover, nav a:focus {
+  background: #1976d2; /* Slightly lighter blue on hover */
+  color: #fff;
+}
+
+/* Search bar styles */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  background: #1976d2; /* Match header accent */
+  border-radius: 8px;
+  padding: 4px 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  max-width: 350px;
+  width: 100%;
+  border: 1.5px solid #1565c0; /* Add a subtle border for a professional look */
+}
+
+/* Style the text input inside the search bar */
+.search-bar input[type="text"] {
+  border: none; /* Remove default border */
+  background: transparent;
+  color: #fff;
+  padding: 10px 8px; /* More padding for a clean look */
+  font-size: 1em;
+  outline: none;
+  flex: 1; /* Take up available space */
+  font-family: 'Montserrat', Arial, sans-serif;
+  border-radius: 6px 0 0 6px; /* Rounded left corners */
+}
+
+/* Placeholder text color */
+.search-bar input[type="text"]::placeholder {
+  color: #bbdefb;
+}
+
+/* Style the search button */
+.search-bar button {
+  background: #42a5f5;
+  color: #fff;
+  border: none;
+  padding: 10px 18px; /* More padding for a button look */
+  border-radius: 0 6px 6px 0; /* Rounded right corners */
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-left: 0; /* Remove left margin for seamless look */
+  font-family: 'Montserrat', Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(66,165,245,0.10); /* Soft shadow for button */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Button hover and focus effect */
+.search-bar button:hover,
+.search-bar button:focus {
+  background: #1565c0;
+  box-shadow: 0 4px 12px rgba(21,101,192,0.15);
+}
+
+/* Hero section styles */
+.hero {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column; /* Stack headline and paragraph */
+  align-items: center;    /* Center horizontally */
+  /* Move content closer to the top */
+  justify-content: flex-start;
+  text-align: center;     /* Center text */
+  background: linear-gradient(135deg, #42a5f5 0%, #e3f2fd 100%); /* Soft blue gradient */
+  color: #1565c0;         /* Deep blue text for contrast */
+  padding: 48px 24px 24px 24px; /* More space at the top */
+  box-sizing: border-box;
+  /* Fade-in animation for hero section */
+  opacity: 0;
+  animation: hero-fade-in 1.2s ease-out forwards;
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 16px;
+  font-weight: 700;
+  /* Slide-in animation for headline */
+  opacity: 0;
+  animation: headline-slide-in 1s 0.3s ease-out forwards;
+}
+
+@keyframes headline-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero p {
+  font-size: 1.2em;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #1565c0;
+  /* Fade-in animation for paragraph */
+  opacity: 0;
+  animation: para-fade-in 1s 0.8s ease-out forwards;
+}
+
+@keyframes para-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Destinations list section styles */
+.destinations-list {
+  background: #fff;
+  margin: 32px auto 0 auto;
+  padding: 32px 16px;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(21,101,192,0.08);
+  text-align: center;
+}
+
+.destinations-list h2 {
+  color: #1565c0;
+  font-size: 2em;
+  margin-bottom: 16px;
+}
+
+.destinations-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.destinations-list li {
+  font-size: 1.1em;
+  color: #1976d2;
+  background: #e3f2fd;
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.destinations-list li:hover {
+  background: #bbdefb;
+}
+
+/* Cards container for destinations */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px; /* Slightly bigger gap for larger cards */
+  margin-top: 32px;
+}
+
+/* Make destination cards bigger */
+.destination-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(21,101,192,0.10);
+  padding: 0 0 32px 0; /* More bottom padding for bigger cards */
+  width: 340px; /* Bigger card width */
+  max-width: 95vw; /* Prevent overflow on very small screens */
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-align: center;
+  color: #1565c0;
+  position: relative;
+  cursor: pointer;
+  animation: card-fade-in 0.8s ease-out forwards;
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: stretch;
+}
+
+/* Style for images inside destination cards */
+.card-img {
+  width: 100%; /* Make image fill the card width */
+  height: 220px; /* Bigger image height */
+  object-fit: cover; /* Crop image to fit nicely */
+  object-position: center 60%; /* Move crop down a bit for better fit */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  margin-bottom: 16px; /* Space below image */
+  display: block;
+}
+
+/* Staggered animation for cards */
+.destination-card:nth-child(1) { animation-delay: 0.2s; }
+.destination-card:nth-child(2) { animation-delay: 0.4s; }
+.destination-card:nth-child(3) { animation-delay: 0.6s; }
+.destination-card:nth-child(4) { animation-delay: 0.8s; }
+.destination-card:nth-child(5) { animation-delay: 1.0s; }
+.destination-card:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.destination-card:hover {
+  transform: translateY(-10px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 24px rgba(21,101,192,0.18);
+  background: #e3f2fd;
+}
+
+.destination-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #1976d2;
+}
+
+.destination-card p {
+  margin: 0;
+  color: #333;
+  font-size: 1em;
+}
+
+@media (max-width: 900px) {
+  .cards-container {
+    gap: 20px;
+  }
+  .destination-card {
+    width: 95%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .card-img {
+    height: 180px; /* Slightly smaller image for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 24px 8px 16px 8px;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+  .search-bar {
+    max-width: 100%;
+    margin-top: 16px;
+    flex-direction: column; /* Stack input and button vertically on mobile */
+    align-items: stretch;   /* Make input and button full width */
+    padding: 8px 4px;
+    gap: 8px;              /* Space between input and button */
+  }
+  .search-bar input[type="text"],
+  .search-bar button {
+    width: 100%;           /* Full width for both input and button */
+    margin-left: 0;        /* Remove left margin on button */
+    border-radius: 6px;
+  }
+  .hero {
+    padding: 16px;
+  }
+  .hero h1 {
+    font-size: 1.5em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  .destinations-list {
+    padding: 16px 4px;
+    margin: 24px 4px 0 4px;
+  }
+  .destinations-list h2 {
+    font-size: 1.3em;
+  }
+  .destinations-list li {
+    font-size: 1em;
+    padding: 10px;
+  }
+  .cards-container {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    align-items: center;
+    gap: 14px;
+  }
+  .destination-card {
+    width: 100%;
+    padding: 0 0 18px 0;
+  }
+  .card-img {
+    height: 160px; /* Smaller image for mobile */
+  }
+}
